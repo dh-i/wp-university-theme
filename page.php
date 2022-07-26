@@ -6,7 +6,7 @@ while (have_posts()) {
         <div class="page-banner__content container container--narrow">
             <h1 class="page-banner__title"><?php the_title(); ?></h1>
             <div class="page-banner__intro">
-                <p>This needs to be replaced</p>
+                <p>This needs to be replaced - page.php</p>
             </div>
         </div>
     </div>
