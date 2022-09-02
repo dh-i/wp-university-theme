@@ -1,5 +1,20 @@
 <?php
 
+require get_theme_file_path('/inc/search-route.php');
+
+function university_custom_rest()
+{
+    //this adds another field named authorName to the response in rest api 
+    //http://fictional-university.local/wp-json/wp/v2/posts
+    register_rest_field('post', 'authorName', array(
+        'get_callback' => function () {
+            return get_the_author();
+        }
+    ));
+}
+
+add_action('rest_api_init', 'university_custom_rest');
+
 function pageBanner($args = array())
 {
     if (!$args['title']) {
